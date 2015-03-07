@@ -17,4 +17,22 @@ angular.module('shortly.links', [])
     });
   };
   $scope.getLinks()
+})
+
+.directive('list', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'app/links/list.html',
+  };
+})
+.directive('shortenedLink', function(){
+  return {
+    restrict: 'EA',
+    templateUrl: 'app/links/shortened-link.html',
+    scope: {
+      source: '='
+    },
+    link: function (scope, ele, attr) {
+    }
+  }
 });

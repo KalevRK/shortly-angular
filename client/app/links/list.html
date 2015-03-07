@@ -1,0 +1,13 @@
+
+
+<div id='container' ng-controller="LinksController" >
+  <input type="search" ng-model="search" placeholder="Search...">
+  <shortened-link source="link" ng-repeat="link in data.links | filter:search"></shortened-link>
+  <a href="#/shorten">Make a new Link</a>
+</div>
+
+
+
+
+
+

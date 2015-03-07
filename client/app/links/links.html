@@ -1,17 +1,2 @@
-<div id='container' ng-controller="LinksController" >
-  <ul>
-    <input type="search" ng-model="search" placeholder="Search...">
-    <li ng-repeat="link in data.links | filter:search">
-      <div>
-        <img src="../assets/redirect_icon.png"/>
-        <span>
-          <a href="" ng-click="goToLink(link)">{{link.title}}</a>
-        </span>
-        <span>
-          {{link.visits}} visits
-        </span>
-      </div>
-    </li>
-  </ul>
-  <a href="#/shorten">Make a new Link</a>
-</div>
+<list></list>
+
