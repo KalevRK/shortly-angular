@@ -10,6 +10,7 @@ angular.module('shortly', [
     .when('/', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
+      //authenticate: true
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
