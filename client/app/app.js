@@ -10,7 +10,6 @@ angular.module('shortly', [
     .when('/', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
-      //authenticate: true
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
@@ -18,11 +17,13 @@ angular.module('shortly', [
     })
     .when('/links', {
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'LinksController',
+      authenticate: true
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
-      controller: 'ShortenController'
+      controller: 'ShortenController',
+      authenticate: true
     })
     .when('/signin', {
       templateUrl: 'app/auth/signin.html',
