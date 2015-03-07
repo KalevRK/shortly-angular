@@ -7,13 +7,17 @@ angular.module('shortly', [
 ])
 .config(function($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/signin', {
+    .when('/', {
       templateUrl: 'app/auth/signin.html',
       controller: 'AuthController'
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
       controller: 'AuthController'
+    })
+    .when('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
     })
     // Your code here
 
