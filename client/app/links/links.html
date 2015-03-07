@@ -1,10 +1,11 @@
 <div id='container' ng-controller="LinksController" >
   <ul>
-    <li ng-repeat="link in data.links">
+    <input type="search" ng-model="search" placeholder="Search...">
+    <li ng-repeat="link in data.links | filter:search">
       <div>
         <img src="../assets/redirect_icon.png"/>
         <span>
-          <a href="{{link.url}}">{{link.title}}</a>
+          <a href="" ng-click="goToLink(link)">{{link.title}}</a>
         </span>
         <span>
           {{link.visits}} visits

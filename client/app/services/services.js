@@ -6,7 +6,15 @@ angular.module('shortly.services', [])
       method: 'GET',
       url: '/api/links'
     }).then(function (response) {
-      return response.data;
+      return response.data.sort(function(a, b){
+        if (a.visits < b.visits) {
+          return 1;
+        } else if (a.visits > b.visits) {
+          return -1;
+        } else if (a.visits === b.visits) {
+          return 0;
+        }
+      });
     });
   };
   var addLink = function(url) {
@@ -16,7 +24,14 @@ angular.module('shortly.services', [])
       data: url
     });
   };
+  var goToLink = function (code) {
+    return $http({
+      method: 'GET',
+      url: '/api/links/' + code
+    });
+  };
   return {
+    goToLink: goToLink,
     getLinks: getLinks,
     addLink: addLink
   }
