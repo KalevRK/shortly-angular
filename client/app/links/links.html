@@ -1,7 +1,15 @@
 <div id='container' ng-controller="LinksController" >
   <ul>
-    <li ng-repeat="link in data.links">!
-      {{link}}
+    <li ng-repeat="link in data.links">
+      <div>
+        <img src="../assets/redirect_icon.png"/>
+        <span>
+          <a href="{{link.url}}">{{link.title}}</a>
+        </span>
+        <span>
+          {{link.visits}} visits
+        </span>
+      </div>
     </li>
   </ul>
   <a href="#/shorten">Make a new Link</a>
